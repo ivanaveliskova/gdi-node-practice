@@ -19,7 +19,7 @@ app.get('/about', homeController.about);
 app.get('/api/all', apiController.all);
 app.get('/api/get/:id', apiController.get);
 
-app.get('/dino', homeController.randomDino);
+// app.get('/dino', homeController.randomDino);
 
 
 // Catch all
