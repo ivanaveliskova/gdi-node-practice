@@ -2,7 +2,6 @@ var path = require('path'),
     fs = require('fs'),
     request = require('request');
 
-
 exports.index = function (req, res) {
     // res.send('Welcome to the GDI Node Workshop!');
     res.render('index');
