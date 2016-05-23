@@ -6,6 +6,8 @@ var express = require('express'),
 
 var port = process.env.PORT || 3000;
 
+app.set('port', port);
+
 app.set('view engine', 'jade');
 
 
@@ -25,6 +27,6 @@ app.get('/api/get/:id', apiController.get);
 // Catch all
 app.get('/*', homeController.error404);
 
-app.listen(port, function () {
-    console.log('Your app is listening on port ' + port);
+app.listen(app.get('port'), function () {
+    console.log('Your app is listening on port ' + app.get('port'));
 });
