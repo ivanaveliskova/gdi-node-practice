@@ -8,7 +8,7 @@
     "jade": "*",
     "path": "*",
     "request": "*",
-    "fs": "*",
+    "fs": "*"
   },
   "devDependencies": {},
   "scripts": {
