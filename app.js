@@ -19,8 +19,8 @@ app.get('/', homeController.index);
 
 app.get('/about', homeController.about);
 
-// app.get('/api/all', apiController.all);
-// app.get('/api/get/:id', apiController.get);
+app.get('/api/all', apiController.all);
+app.get('/api/get/:id', apiController.get);
 
 // app.get('/dino', homeController.randomDino);
 
