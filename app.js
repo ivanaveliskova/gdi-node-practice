@@ -1,8 +1,8 @@
 var express = require('express'),
+    app = express(),
     homeController = require('./controllers/home'),
     apiController = require('./controllers/api'),
-    jade = require('jade'),
-    app = express();
+    jade = require('jade');
 
 var port = process.env.PORT || 3000;
 
@@ -18,8 +18,8 @@ app.get('/', homeController.index);
 
 app.get('/about', homeController.about);
 
-app.get('/api/all', apiController.all);
-app.get('/api/get/:id', apiController.get);
+// app.get('/api/all', apiController.all);
+// app.get('/api/get/:id', apiController.get);
 
 // app.get('/dino', homeController.randomDino);
 
