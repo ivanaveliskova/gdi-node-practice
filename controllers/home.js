@@ -1,6 +1,6 @@
-var path = require('path'),
-    fs = require('fs'),
-    request = require('request');
+// var path = require('path'),
+//     fs = require('fs'),
+//     request = require('request');
 
 exports.index = function (req, res) {
     // res.send('Welcome to the GDI Node Workshop!');
@@ -19,19 +19,19 @@ exports.error404 = function (req, res) {
     res.render('404');
 };
 
-exports.randomDino = function (req, res) {
-    var number = Math.floor(Math.random() * 1400);
+// exports.randomDino = function (req, res) {
+//     var number = Math.floor(Math.random() * 1400);
 
-    // var number = 1;
+//     // var number = 1;
 
 
-    request('http://localhost:3000/api/get/' + number, function (err, response, body) {
-        if (!err && response.statusCode == 200) {
-            res.render("random", {
-                dinosaur: JSON.parse(body).dinosaur
-            });
-        }
+//     request('http://localhost:3000/api/get/' + number, function (err, response, body) {
+//         if (!err && response.statusCode == 200) {
+//             res.render("random", {
+//                 dinosaur: JSON.parse(body).dinosaur
+//             });
+//         }
 
-        console.log(err);
-    });
-};
+//         console.log(err);
+//     });
+// };
