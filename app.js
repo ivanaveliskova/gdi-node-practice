@@ -3,7 +3,7 @@ var express = require('express'),
     homeController = require('./controllers/home'),
     jade = require('jade');
 
-// var apiController = require('./controllers/api');
+var apiController = require('./controllers/api');
 
 var port = process.env.PORT || 3000;
 
@@ -22,7 +22,7 @@ app.get('/about', homeController.about);
 app.get('/api/all', apiController.all);
 app.get('/api/get/:id', apiController.get);
 
-// app.get('/dino', homeController.randomDino);
+app.get('/dino', homeController.randomDino);
 
 
 // Catch all

@@ -22,10 +22,13 @@ exports.error404 = function (req, res) {
 exports.randomDino = function (req, res) {
     var number = Math.floor(Math.random() * 1400);
 
-    // var number = 1;
+    var port = process.env.PORT || 3000;
 
+    if (port == 3000) {
+        port = 'localhost:3000';
+    }
 
-    request('http://localhost:3000/api/get/' + number, function (err, response, body) {
+    request('http://' + port + '/api/get/' + number, function (err, response, body) {
         if (!err && response.statusCode == 200) {
             res.render("random", {
                 dinosaur: JSON.parse(body).dinosaur
