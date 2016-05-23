@@ -1,8 +1,9 @@
 var express = require('express'),
     app = express(),
     homeController = require('./controllers/home'),
-    apiController = require('./controllers/api'),
     jade = require('jade');
+
+// var apiController = require('./controllers/api');
 
 var port = process.env.PORT || 3000;
 
