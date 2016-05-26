@@ -22,11 +22,7 @@ exports.error404 = function (req, res) {
 exports.randomDino = function (req, res) {
     var number = Math.floor(Math.random() * 1400);
 
-    var port = process.env.PORT || 3000;
-
-    if (port == 3000) {
-        port = 'localhost:3000';
-    }
+    var port = req.get('host');
 
     request('http://' + port + '/api/get/' + number, function (err, response, body) {
         if (!err && response.statusCode == 200) {
