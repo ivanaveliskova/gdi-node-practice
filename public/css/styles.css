@@ -9,3 +9,13 @@ h1 {
 p {
     font-family: sans-serif;
 }
+
+.dino-info {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.infobox {
+    margin-left: 50px;
+    float: right;
+}

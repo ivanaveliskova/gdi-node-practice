@@ -1,7 +1,8 @@
 var express = require('express'),
-    app = express(),
     homeController = require('./controllers/home'),
     jade = require('jade');
+
+var app = express();
 
 var apiController = require('./controllers/api');
 
@@ -23,7 +24,6 @@ app.get('/api/all', apiController.all);
 app.get('/api/get/:id', apiController.get);
 
 app.get('/dino', homeController.randomDino);
-
 
 // Catch all
 app.get('/*', homeController.error404);

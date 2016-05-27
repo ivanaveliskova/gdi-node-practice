@@ -2,6 +2,7 @@ var path = require('path'),
     fs = require('fs'),
     request = require('request');
 
+
 exports.index = function (req, res) {
     // res.send('Welcome to the GDI Node Workshop!');
     res.render('index');
@@ -20,17 +21,29 @@ exports.error404 = function (req, res) {
 };
 
 exports.randomDino = function (req, res) {
-    var number = Math.floor(Math.random() * 1400);
-
+    var number = Math.floor(Math.random() * 1449);
     var port = req.get('host');
 
     request('http://' + port + '/api/get/' + number, function (err, response, body) {
         if (!err && response.statusCode == 200) {
-            res.render("random", {
-                dinosaur: JSON.parse(body).dinosaur
+
+            var dino = JSON.parse(body).dinosaur;
+
+            // console.log(dino);
+
+            request('http://en.wikipedia.org/w/api.php?action=parse&utf8=1&page=' + dino + '&format=json&prop=text&section=0', function(error, dinoRes, dinoBody) {
+                if (!error && dinoRes.statusCode == 200) {
+                    var dinoInfo = JSON.parse(dinoBody).parse.text['*'];
+
+                    res.render('random', {
+                        dinosaur: dino,
+                        dinoInfo: dinoInfo
+                    });
+                }
+
             });
+
         }
 
-        console.log(err);
     });
 };
